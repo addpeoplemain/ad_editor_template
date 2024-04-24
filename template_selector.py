@@ -29,23 +29,24 @@ def main():
         choice = st.selectbox("Menu List",menu)
         choice_value = choice
         st.subheader("Set Budget")
-        budget = st.number_input("Enter Budget",key="budget")
+        budget_input = st.number_input("Enter Budget",key="budget")
+        if st.button('Set Budget'):
+            budget = budget_input
       
         st.subheader("Set Max CPC")
-        max_cpc = st.number_input("Enter Max Cpc",key = "cpc")
-        st.write("currently not functional.")
+        max_cpc_input = st.number_input("Enter Max Cpc",key = "cpc")
+        if st.button('Set Max CPC'):
+            max_cpc = max_cpc_input
 
         st.subheader("Input Generic Final URL")
-        max_cpc = st.number_input("Enter Final URL for Ads",key = "final_url")
-        st.write("currently not functional.")
-
+        final_url_input= st.number_input("Enter Final URL for Ads",key = "final_url")
+        if st.button('Set Final URL'):
+            final_url = final_url_input
        
     st.header("Ad editor template application 1.0")
 
     st.write("The current proof of concept demonstrator can be used select csv templates to import into google ads editor" )
     st.write("Use the side bar on the left to select: the desired template" )
-
-  
 
     if choice == choice_value:
         st.title(choice_value +"Template")
@@ -57,6 +58,8 @@ def main():
         csv_df_ad_editor_csv = template_retrieval.convert_df(csv_df)
         st.download_button("Press to Download",csv_df_ad_editor_csv, csv_name+"_template.csv","text/csv",key='download-csv')
 
+    st.title("Edited Template")
+    edit_csv_df = csv_df.copy()
   
 if __name__ == "__main__":
     main()
