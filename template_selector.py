@@ -57,7 +57,7 @@ def main():
         csv_df = pd.read_csv(csv_name)
         st.dataframe(csv_df)
         csv_df_ad_editor_csv = template_retrieval.convert_df(csv_df)
-        st.download_button("Press to Download",csv_df_ad_editor_csv, csv_name+"_template.csv","text/csv",key='download-csv')
+        st.download_button("Press to Download",csv_df_ad_editor_csv, csv_name,"text/csv",key='download-csv')
 
     st.title("Edited Template")
     edit_csv_df = csv_df.copy()
@@ -67,7 +67,7 @@ def main():
 
     edit_csv_df_ad_editor_csv = template_retrieval.convert_df(edit_csv_df)
     st.dataframe(edit_csv_df)
-    st.download_button("Press to Download",edit_csv_df_ad_editor_csv, csv_name+"_edited_template.csv","text/csv",key='download-edited_csv')
+    st.download_button("Press to Download",edit_csv_df_ad_editor_csv, "edited_"+csv_name,"text/csv",key='download-edited_csv')
   
 if __name__ == "__main__":
     main()
