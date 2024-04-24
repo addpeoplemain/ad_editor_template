@@ -22,7 +22,7 @@ import template_retrieval
 
 st.set_page_config(page_title=None, page_icon=None, layout="wide", initial_sidebar_state="auto", menu_items=None)
 def main():
-    menu =["Template Selection","Tree Surgery","Interior Design"]
+    menu =["Tree Surgery","Interior Design"]
     with st.sidebar:
       #  url_search = st.text_input("//TODO Database URL")
         st.subheader("Main Menu")
@@ -47,11 +47,7 @@ def main():
 
     st.title("Template")  
 
-    if choice == "Template Selection":
-        st.subheader("Please select a Template")
-        
-
-    elif choice == choice_value and not "Template Selection":
+    if choice == choice_value:
         st.subheader(choice_value)
         csv_name = choice_value.lower()+"_test.csv"
         csv_name= "_".join( csv_name.split())
