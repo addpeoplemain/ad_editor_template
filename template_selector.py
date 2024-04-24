@@ -84,7 +84,8 @@ def main():
     edit_csv_df.loc[edit_csv_df['Ad type'] == 'Responsive search ad', 'Final URL'] = "--"
     edit_csv_df.loc[edit_csv_df['Ad type'] == 'Responsive search ad', 'Final URL'] = final_url
 
-    
+    edit_csv_df_ad_editor_csv = template_retrieval.convert_df(edit_csv_df)
+    st.download_button("Press to Download",csv_df_ad_editor_csv, csv_name+"_edited_template.csv","text/csv",key='download-csv')
     
     
        
