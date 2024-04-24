@@ -51,7 +51,7 @@ def main():
         st.subheader("Please select a Template")
         
 
-    if choice == choice_value:
+    elif choice == choice_value and not "Template Selection":
         st.subheader(choice_value)
         csv_name = choice_value.lower()+"_test.csv"
         csv_name= "_".join( csv_name.split())
