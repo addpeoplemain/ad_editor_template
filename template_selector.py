@@ -52,7 +52,7 @@ def main():
 
     if choice == choice_value:
         st.title(choice_value +" Template")
-        csv_name = choice_value.lower()+"_test.csv"
+        csv_name = choice_value.lower()+"_template.csv"
         csv_name= "_".join( csv_name.split())
         csv_df = pd.read_csv(csv_name)
         st.dataframe(csv_df)
