@@ -44,8 +44,9 @@ def main():
             st.button('Update Values', on_click=set_state, args=[1])
         if st.session_state.stage >= 1:        
             budget = budget_input
-            final_url = final_url_input  
-            
+            final_url = final_url_input
+            st.button('Update Values', on_click=set_state, args=[1])  
+
     st.header("Ad editor template application 1.0")
 
     st.write("The current proof of concept demonstrator can be used select csv templates to import into google ads editor" )
