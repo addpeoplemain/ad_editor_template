@@ -22,6 +22,7 @@ import template_retrieval
 
 st.set_page_config(page_title=None, page_icon=None, layout="wide", initial_sidebar_state="auto", menu_items=None)
 def main():
+    final_url= "temporary url"
     menu =["Tree Surgery","Interior Design"]
     with st.sidebar:
         st.subheader("Main Menu")
@@ -58,7 +59,7 @@ def main():
     edit_csv_df = csv_df.copy()
     edit_csv_df.loc[edit_csv_df['Ad type'] == 'Responsive search ad', 'Final URL'] = "--"
     edit_csv_df.loc[edit_csv_df['Ad type'] == 'Responsive search ad', 'Final URL'] = final_url
-    
+
     try:
         edit_csv_df.at[0, 'Budget'] = budget
     except:
