@@ -44,13 +44,7 @@ def main():
         if st.button('Update Values'):
             budget = budget_input
             final_url = final_url_input
-        
-
-    
-
-
-       
-       
+          
     st.header("Ad editor template application 1.0")
 
     st.write("The current proof of concept demonstrator can be used select csv templates to import into google ads editor" )
@@ -60,7 +54,6 @@ def main():
         st.title(choice_value +" Template")
         csv_name = choice_value.lower()+"_test.csv"
         csv_name= "_".join( csv_name.split())
-        st.subheader(csv_name)
         csv_df = pd.read_csv(csv_name)
         st.dataframe(csv_df)
         csv_df_ad_editor_csv = template_retrieval.convert_df(csv_df)
