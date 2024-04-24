@@ -18,12 +18,18 @@ from bs4 import BeautifulSoup as bs
 from csv import DictWriter
 import template_retrieval
 
+def set_state(i):
+    st.session_state.stage = i
 
 
 st.set_page_config(page_title=None, page_icon=None, layout="wide", initial_sidebar_state="auto", menu_items=None)
 def main():
     final_url= "temporary url"
     budget = 0
+    if 'stage' not in st.session_state:
+        st.session_state.stage = 0
+
+
     menu =["Tree Surgery","Interior Design"]
     with st.sidebar:
         st.subheader("Main Menu")
@@ -34,10 +40,12 @@ def main():
         st.subheader("Input Generic Final URL")
         final_url_input= st.text_input("Enter Final URL for Ads",key = "final_url")
        
-        if st.button('Update Values'):
+        if st.session_state.stage == 0:
+            st.button('Update Values', on_click=set_state, args=[1])
+        if st.session_state.stage >= 1:        
             budget = budget_input
-            final_url = final_url_input
-          
+            final_url = final_url_input  
+            
     st.header("Ad editor template application 1.0")
 
     st.write("The current proof of concept demonstrator can be used select csv templates to import into google ads editor" )
