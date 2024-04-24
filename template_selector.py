@@ -50,7 +50,7 @@ def main():
     if choice == choice_value:
         st.subheader(choice_value)
         csv_name = choice_value.lower()+".csv"
-        csv_name.replace(" ", "_")
+        csv_name= "_".join( csv_name.split())
         st.subheader(csv_name)
         csv_df = pd.read_csv(csv_name)
         st.dataframe(csv_df)
