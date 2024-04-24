@@ -52,6 +52,7 @@ def main():
     st.title("Edited Template")
     edit_csv_df = csv_df.copy()
     edit_csv_df.at[0, 'Budget'] = budget
+    st.dataframe(edit_csv_df)
    
   
 if __name__ == "__main__":
