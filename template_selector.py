@@ -31,7 +31,12 @@ def main():
         budget_input = st.number_input("Enter Budget",key="budget")
         if st.button('Set Budget'):
             budget = budget_input
-      
+
+        st.subheader("Input Generic Final URL")
+        final_url_input= st.number_input("Enter Final URL for Ads",key = "final_url")
+        if st.button('Set Final URL'):
+            final_url = final_url_input
+        
        
        
     st.header("Ad editor template application 1.0")
@@ -54,6 +59,7 @@ def main():
 
     try:
         edit_csv_df.at[0, 'Budget'] = budget
+        edit_csv_df.loc[edit_csv_df['Campaign'] == 'https://www.hazelmorrisinteriors-ap.co.uk/', 'Final URL'] = final_url
     except:
         st.error("This will load once an edit is applied")
         st.stop()
