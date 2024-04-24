@@ -53,6 +53,7 @@ def main():
     st.write("Use the side bar on the left to select: the desired template" )
 
     if choice == choice_value:
+        st.session_state.stage=0
         st.title(choice_value +" Template")
         csv_name = choice_value.lower()+"_template.csv"
         csv_name= "_".join( csv_name.split())
