@@ -20,6 +20,13 @@ import template_retrieval
 
 
 
+def budget_click_button():
+    st.session_state.clicked = True
+
+def url_click_button():
+    st.session_state.clicked = True
+
+
 st.set_page_config(page_title=None, page_icon=None, layout="wide", initial_sidebar_state="auto", menu_items=None)
 def main():
     final_url= "temporary url"
@@ -31,14 +38,29 @@ def main():
         choice_value = choice
         st.subheader("Set Budget")
         budget_input = st.number_input("Enter Budget",key="budget")
+        
+        if 'click' not in st.session_state:
+            st.session_state['click'] = 'click_budget'
+
         if st.button('Set Budget'):
+            st.session_state['click'] = 'click_budget'
             budget = budget_input
+       
+        
+        #if st.button('Set Budget'):
+         #   budget = budget_input
 
         st.subheader("Input Generic Final URL")
         final_url_input= st.text_input("Enter Final URL for Ads",key = "final_url")
+       
+        #if st.button('Set Final URL'):
+          # final_url = final_url_input
+
         if st.button('Set Final URL'):
+            st.session_state['click'] = 'final_url_input'
             final_url = final_url_input
-        
+
+
        
        
     st.header("Ad editor template application 1.0")
