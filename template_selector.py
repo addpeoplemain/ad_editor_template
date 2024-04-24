@@ -51,6 +51,7 @@ def main():
         st.subheader(choice_value)
         csv_name = choice_value.lower()+".csv"
         csv_name.replace(" ", "_")
+        st.subheader(csv_name)
         csv_df = pd.read_csv(csv_name)
         st.dataframe(csv_df)
         csv_df_ad_editor_csv = template_retrieval.convert_df(csv_df)
