@@ -22,7 +22,7 @@ import template_retrieval
 
 st.set_page_config(page_title=None, page_icon=None, layout="wide", initial_sidebar_state="auto", menu_items=None)
 def main():
-    menu =["Template Selection","Tree_Surgery","Interior_Design"]
+    menu =["Template Selection","Tree Surgery","Interior Design"]
     with st.sidebar:
       #  url_search = st.text_input("//TODO Database URL")
         st.subheader("Main Menu")
