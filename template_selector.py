@@ -56,13 +56,13 @@ def main():
 
     st.title("Edited Template")
     edit_csv_df = csv_df.copy()
-
+    
     try:
         edit_csv_df.at[0, 'Budget'] = budget
-        edit_csv_df.loc[edit_csv_df['Campaign'] == 'https://www.hazelmorrisinteriors-ap.co.uk/', 'Final URL'] = final_url
     except:
         st.error("This will load once an edit is applied")
         st.stop()
+    edit_csv_df.loc[edit_csv_df['Campaign'] == 'https://www.hazelmorrisinteriors-ap.co.uk/', 'Final URL'] = final_url
     st.dataframe(edit_csv_df)
    
   
