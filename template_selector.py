@@ -51,7 +51,12 @@ def main():
 
     st.title("Edited Template")
     edit_csv_df = csv_df.copy()
-    edit_csv_df.at[0, 'Budget'] = budget
+
+    try:
+        edit_csv_df.at[0, 'Budget'] = budget
+    except:
+        st.error("This will load once an edit is applied")
+        st.stop()
     st.dataframe(edit_csv_df)
    
   
