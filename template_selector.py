@@ -38,27 +38,15 @@ def main():
         choice_value = choice
         st.subheader("Set Budget")
         budget_input = st.number_input("Enter Budget",key="budget")
-        
-        if 'click' not in st.session_state:
-            st.session_state['click'] = 'click_budget'
-
-        if st.button('Set Budget'):
-            st.session_state['click'] = 'click_budget'
-            budget = budget_input
-       
-        
-        #if st.button('Set Budget'):
-         #   budget = budget_input
-
         st.subheader("Input Generic Final URL")
         final_url_input= st.text_input("Enter Final URL for Ads",key = "final_url")
        
-        #if st.button('Set Final URL'):
-          # final_url = final_url_input
-
-        if st.button('Set Final URL'):
-            st.session_state['click'] = 'final_url_input'
+        if st.button('Update Values'):
+            budget = budget_input
             final_url = final_url_input
+        
+
+    
 
 
        
