@@ -33,7 +33,7 @@ def main():
             budget = budget_input
 
         st.subheader("Input Generic Final URL")
-        final_url_input= st.number_input("Enter Final URL for Ads",key = "final_url")
+        final_url_input= st.text_input("Enter Final URL for Ads",key = "final_url")
         if st.button('Set Final URL'):
             final_url = final_url_input
         
