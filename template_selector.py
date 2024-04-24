@@ -21,7 +21,19 @@ import template_retrieval
 
 
 st.set_page_config(page_title=None, page_icon=None, layout="wide", initial_sidebar_state="auto", menu_items=None)
-def main():    
+def main():
+    menu =["Tree Surgery","Interior Design"]
+    with st.sidebar:
+        st.subheader("Main Menu")
+        choice = st.selectbox("Menu List",menu)
+        choice_value = choice
+        st.subheader("Set Budget")
+        budget_input = st.number_input("Enter Budget",key="budget")
+        if st.button('Set Budget'):
+            budget = budget_input
+      
+       
+       
     st.header("Ad editor template application 1.0")
 
     st.write("The current proof of concept demonstrator can be used select csv templates to import into google ads editor" )
@@ -39,30 +51,20 @@ def main():
 
     st.title("Edited Template")
     edit_csv_df = csv_df.copy()
-
-    menu =["Tree Surgery","Interior Design"]
-    with st.sidebar:
-      #  url_search = st.text_input("//TODO Database URL")
-        st.subheader("Main Menu")
-        choice = st.selectbox("Menu List",menu)
-        choice_value = choice
-        st.subheader("Set Budget")
-        budget_input = st.number_input("Enter Budget",key="budget")
-        if st.button('Set Budget'):
-            budget = budget_input
-      
-        st.subheader("Set Max CPC")
-        max_cpc_input = st.number_input("Enter Max Cpc",key = "cpc")
-        if st.button('Set Max CPC'):
-            max_cpc = max_cpc_input
-
-        st.subheader("Input Generic Final URL")
-        final_url_input= st.number_input("Enter Final URL for Ads",key = "final_url")
-        if st.button('Set Final URL'):
-            final_url = final_url_input
+    edit_csv_df.at[0, 'Budget'] = budget
+   
   
 if __name__ == "__main__":
     main()
 
 
 
+ #st.subheader("Set Max CPC")
+     #   max_cpc_input = st.number_input("Enter Max Cpc",key = "cpc")
+     #   if st.button('Set Max CPC'):
+      #      max_cpc = max_cpc_input
+
+      #  st.subheader("Input Generic Final URL")
+      #  final_url_input= st.number_input("Enter Final URL for Ads",key = "final_url")
+      #  if st.button('Set Final URL'):
+      #      final_url = final_url_input
