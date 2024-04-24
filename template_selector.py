@@ -45,10 +45,10 @@ def main():
     st.write("The current proof of concept demonstrator can be used select csv templates to import into google ads editor" )
     st.write("Use the side bar on the left to select: the desired template" )
 
-    st.title("Template")  
+  
 
     if choice == choice_value:
-        st.subheader(choice_value)
+        st.title(choice_value +"Template")
         csv_name = choice_value.lower()+"_test.csv"
         csv_name= "_".join( csv_name.split())
         st.subheader(csv_name)
@@ -57,29 +57,6 @@ def main():
         csv_df_ad_editor_csv = template_retrieval.convert_df(csv_df)
         st.download_button("Press to Download",csv_df_ad_editor_csv, csv_name+"_template.csv","text/csv",key='download-csv')
 
-
-
-
-
-
-
-    
-   # if choice == "Interior Design":
-   #     st.subheader("Interior Design")
-   #     interior_design_df = pd.read_csv('interior_design_test.csv')
-   #     st.dataframe(interior_design_df)
-   #     interior_design_ad_editor_csv = template_retrieval.convert_df(interior_design_df)
-   #     st.download_button("Press to Download",interior_design_ad_editor_csv,"interior_design_template.csv","text/csv",key='download-csv')
-
-   # elif choice == "Tree Surgery/Arborist":
-   #     st.subheader("Tree Surgery/Arborist")
-   #     tree_surgery_df = pd.read_csv('tree_surgery_test.csv')
-   #     st.dataframe(tree_surgery_df)
-    #    tree_suregery_ad_editor_csv = template_retrieval.convert_df(tree_surgery_df)
-   #     st.download_button("Press to Download",funeral_ad_editor_csv,"tree_surgery_template.csv","text/csv",key='download-csv')
-
-#-------------------------------------------------------------------------------------------------
-  
   
 if __name__ == "__main__":
     main()
