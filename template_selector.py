@@ -47,7 +47,7 @@ def main():
 
     st.title("Template")  
 
-    if choice == Template Selection:
+    if choice == "Template Selection":
         st.subheader("Please select a Template")
         
 
